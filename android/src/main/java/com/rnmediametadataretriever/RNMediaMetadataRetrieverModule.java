@@ -31,7 +31,7 @@ public class RNMediaMetadataRetrieverModule extends ReactContextBaseJavaModule {
      WritableMap map = Arguments.createMap();
      MediaMetadataRetriever mmr = new MediaMetadataRetriever();
     try{
-      mmr.setDataSource(uri, new HashMap<String, String>());
+      mmr.setDataSource(uri);
       String songGenre = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_GENRE);
       String album =  mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM);
       String duration = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
