@@ -1,4 +1,4 @@
-## Forked just to fix [Error: setDataSource failed: status = 0xFFFFFFEA]. Very minor change involved.
+## Forked to fix [Error: setDataSource failed: status = 0xFFFFFFEA]. Returning few more datapoints.
 
 # react-native-media-metadata-retriever
 React Native Media Metadata Retriever API for Android
@@ -31,7 +31,11 @@ RNMediaMetadataRetriever.getMetadata(uri)
   artist: 'Michael Jackson',
   duration: '328829',
   album: 'Dangerous',
-  genre: 'Hip Hop' 
+  genre: 'Hip Hop',
+  mime_type: 'audio/aac',
+  sample_rate: 44100, // 0 for wav files
+  num_channels: 2, // 0 for wav files
+  bit_rate: 64000 // 0 for wav files
 }
 ```
 
