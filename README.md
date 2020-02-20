@@ -1,3 +1,5 @@
+## Forked just to fix [Error: setDataSource failed: status = 0xFFFFFFEA]. Very minor change involved.
+
 # react-native-media-metadata-retriever
 React Native Media Metadata Retriever API for Android
 
