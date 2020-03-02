@@ -3,7 +3,7 @@
 # react-native-media-metadata-retriever
 React Native Media Metadata Retriever API for Android
 
-`npm install https://github.com/YajanaRao/react-native-media-metadata-retriever.git --save`
+`npm install https://github.com/ishwortimilsina/react-native-media-metadata-retriever.git --save`
 
 Implementation of [MediaMetadataRetriever](https://developer.android.com/reference/kotlin/android/media/MediaMetadataRetriever) for react native
 
