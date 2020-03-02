@@ -49,7 +49,7 @@ public class RNMediaMetadataRetrieverModule extends ReactContextBaseJavaModule {
       int numChannels = 0;
 
       // MediaFormat cannot grab these data from wav files, so we will exclude wav files
-      if (!mimeType.contains("wav")) {
+      if (mimeType != null && !mimeType.contains("wav")) {
         try {
           mex.setDataSource(uri);
         } catch (IOException e) {
@@ -57,9 +57,15 @@ public class RNMediaMetadataRetrieverModule extends ReactContextBaseJavaModule {
         }
         MediaFormat mf = mex.getTrackFormat(0);
 
-        bitRate = mf.getInteger(MediaFormat.KEY_BIT_RATE);
-        sampleRate = mf.getInteger(MediaFormat.KEY_SAMPLE_RATE);
-        numChannels = mf.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
+        if (mf.containsKey(MediaFormat.KEY_BIT_RATE)) {
+          bitRate = mf.getInteger(MediaFormat.KEY_BIT_RATE);
+        }
+        if (mf.containsKey(MediaFormat.KEY_SAMPLE_RATE)) {
+          sampleRate = mf.getInteger(MediaFormat.KEY_SAMPLE_RATE);
+        }
+        if (mf.containsKey(MediaFormat.KEY_CHANNEL_COUNT)) {
+          numChannels = mf.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
+        }
       }
 
       map.putString("genre"  ,songGenre);
